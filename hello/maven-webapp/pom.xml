@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>hello</groupId>
+  <artifactId>maven-webapp</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>maven-webapp Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+    <!-- Generic properties -->
+    <java.version>1.8</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- Test -->
+    <junit.version>3.8.1</junit.version>
+    <!-- plugin -->
+    <maven.compiler.version>3.7.0</maven.compiler.version>
+    <tomcat7.maven.version>2.2</tomcat7.maven.version>
+    <tomcat7.maven.uriEncoding>UTF-8</tomcat7.maven.uriEncoding>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <finalName>maven-webapp</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.version}</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>${tomcat7.maven.version}</version>
+        <configuration>
+          <url>http://localhost:8080/manager/text</url>
+          <server>tomcat7</server>
+          <username>admin</username>
+          <password>Donald33</password>
+          <port>8080</port>
+          <path>/hello-maven-webapp</path>
+          <uriEncoding>${tomcat7.maven.uriEncoding}</uriEncoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
