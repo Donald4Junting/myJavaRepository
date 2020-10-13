@@ -14,7 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <!-- Test -->
-    <junit.version>3.8.1</junit.version>
+    <junit.version>4.13.1</junit.version>
     <!-- plugin -->
     <maven.compiler.version>3.7.0</maven.compiler.version>
     <tomcat7.maven.version>2.2</tomcat7.maven.version>
